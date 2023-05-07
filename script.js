@@ -1,14 +1,20 @@
+const repoName = '';
 $(document).ready(function() {
+  const pathNameArr = window.location.pathname.split('/');
+  if (pathNameArr[1]) {
+    repoName = pathNameArr[1];
+  }
+
   const username = localStorage.getItem("username");
   if (!username) {
-      window.location.href = window.location.origin + "/login.html";
+      window.location.href = window.location.origin + repoName + "/login.html";
   }
 });
 
 const logoElement = $("#logo");
 if (logoElement) {
   logoElement.on("click", () => {
-    window.location.href = window.location.origin + "/index.html";
+    window.location.href = window.location.origin + repoName + "/index.html";
   })
 }
 
@@ -16,7 +22,7 @@ const systemElement = $(".system");
 if (systemElement) {
   systemElement.on("click", (currentElement) => {
       const system = currentElement.target.dataset.systemName;
-      window.location.href = window.location.origin + "/system.html?system=" + system;
+      window.location.href = window.location.origin + repoName + "/system.html?system=" + system;
   })
 }
 
@@ -25,7 +31,7 @@ const logoutElemet = $("#logout");
 if (logoutElemet) {
   logoutElemet.on("click", () => {
     localStorage.clear();
-    window.location.href = window.location.origin + "/login.html";
+    window.location.href = window.location.origin + repoName + "/login.html";
   })
 }
 

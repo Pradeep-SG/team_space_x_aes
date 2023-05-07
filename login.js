@@ -1,4 +1,10 @@
+const repoName = '';
 $(document).ready(function() {
+    const pathNameArr = window.location.pathname.split('/');
+    if (pathNameArr[1]) {
+        repoName = pathNameArr[1];
+    }
+
     const username = localStorage.getItem("username");
     if (username) {
         window.location.href = window.location.origin + "/index.html";
