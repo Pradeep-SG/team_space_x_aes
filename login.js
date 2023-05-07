@@ -1,13 +1,13 @@
-const repoName = '';
+let repoName = '';
 $(document).ready(function() {
     const pathNameArr = window.location.pathname.split('/');
-    if (pathNameArr[1]) {
+    if (pathNameArr[1] && !pathNameArr[1].includes('.html')) {
         repoName = pathNameArr[1];
     }
 
     const username = localStorage.getItem("username");
     if (username) {
-        window.location.href = window.location.origin + "/index.html";
+        window.location.href = window.location.origin + repoName + "/index.html";
     }
 });
 
@@ -24,7 +24,7 @@ if (loginFormElement) {
     localStorage.setItem("username", username);
     localStorage.setItem("password", password);
     
-    window.location.href = window.location.origin + "/index.html";
+    window.location.href = window.location.origin + repoName + "/index.html";
   });
 }
 

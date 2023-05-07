@@ -1,8 +1,8 @@
-const repoName = '';
+let repoName = '';
 $(document).ready(function() {
   const pathNameArr = window.location.pathname.split('/');
-  if (pathNameArr[1]) {
-    repoName = pathNameArr[1];
+  if (pathNameArr[1] && !pathNameArr[1].includes('.html')) {
+    repoName = '/' + pathNameArr[1];
   }
 
   const username = localStorage.getItem("username");
