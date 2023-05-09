@@ -21,9 +21,16 @@ if (loginFormElement) {
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
+    const errorElement = $(".invalid-login");
+    if (username !== "SpaceX" || password !== "Spacex@123") {
+      errorElement.css("visibility", "visible");
+      return;
+    }
+
     localStorage.setItem("username", username);
     localStorage.setItem("password", password);
     localStorage.setItem("first_login", "true");
+    errorElement.css("visibility", "hidden");
     
     window.location.href = window.location.origin + repoName + "/index.html";
   });

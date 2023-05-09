@@ -4,12 +4,12 @@ if (firstLogin) {
         setTimeout(function() {
             let welcomeElement = $("#welcome");
             welcomeElement.addClass("fade-out");
-        }, 3000); // 3 seconds
+        }, 5000); // 3 seconds
 
         setTimeout(function() {
             let welcomeElement = $("#welcome-2");
             welcomeElement.addClass("fade-out");
-        }, 6000); // 6 seconds
+        }, 10000); // 6 seconds
         localStorage.setItem("first_login", "false");
     });
 } else {

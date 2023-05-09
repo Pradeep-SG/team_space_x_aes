@@ -78,7 +78,7 @@ body {
 header {
   display: flex;
   width: 100%;
-  padding: 0 70px;
+  padding: 0 60px 0 0;
   justify-content: space-around;
   align-items: center;
   color: #393e46;
@@ -96,7 +96,7 @@ header {
 }
 
 .logo img {
-  width: 100px;
+  width: 150px;
   position: relative;
   top: 5px;
 }
@@ -193,6 +193,7 @@ footer p {
   justify-content: center;
   gap: 30px;
   padding: 0 60px;
+  position: relative;
 }
 
 .login-container h2 {
@@ -401,4 +402,10 @@ input[type="submit"]:hover {
   border-radius: 10px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.invalid-login {
+  color: red;
+  text-align: center;
+  visibility: hidden;
 }
