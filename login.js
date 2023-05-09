@@ -23,6 +23,7 @@ if (loginFormElement) {
 
     localStorage.setItem("username", username);
     localStorage.setItem("password", password);
+    localStorage.setItem("first_login", "true");
     
     window.location.href = window.location.origin + repoName + "/index.html";
   });
