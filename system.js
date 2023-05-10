@@ -1,4 +1,4 @@
-import { channels } from "./channels.js";
+import { channels, channelNames } from "./channels.js";
 
 $(document).ready(function() {
     const params = (new URL(document.location)).searchParams;
@@ -6,6 +6,9 @@ $(document).ready(function() {
     const systemConf = channels[system];
     const channelID = systemConf.channelID;
     
+    const titleElement = $(".system-name");
+    titleElement.text(channelNames[system]);
+
     const chartElemet = $("#chart");
     chartElemet.attr("src", "https://thingspeak.com/channels/"+channelID+"/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15");
 

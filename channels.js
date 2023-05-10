@@ -12,3 +12,10 @@ export const channels = {
     "airbag": new Channel(2117973, 643523, 643524),
     "oilsystem": new Channel(2117975, 643526, 643527)
 }
+
+export const channelNames = {
+    "tyrepressure": "Tyre pressure system",
+    "temperature": "Temperature System",
+    "airbag": "Airbag system",
+    "oilsystem": "Oil level system"
+}
